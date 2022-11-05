@@ -1,12 +1,18 @@
 .header {
     height: 80px;
-    background-color: rgba(28, 43, 53, 1);
+    background-color: rgb(38, 47, 54);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-left: 140px;
     padding-right: 140px;
 
+}
+
+.header img {
+    width: 300px;
+    height: 80px;
+    border-radius: 50%;
 }
 
 .header a {
@@ -18,4 +24,8 @@
 
 .header a:hover {
     color: orange;
+}
+
+.btn-logout {
+    margin-left: 10px;
 }
