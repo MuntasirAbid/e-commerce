@@ -10,10 +10,11 @@ const Orders = () => {
     const { products, initialCart } = useLoaderData();
     const [cart, setCart] = useState(initialCart);
 
-    const handleRemoveItem = (id) => {
-        const remaining = cart.filter(product => product._id !== id);
+    const handleRemoveItem = (_id) => {
+        const remaining = cart.filter(product => product._id !== _id);
         setCart(remaining);
-        removeFromDb(id);
+        removeFromDb(_id);
+
     }
 
     const clearCart = () => {
@@ -48,4 +49,4 @@ const Orders = () => {
     );
 };
 
-export default Orders;
+export default Orders; 

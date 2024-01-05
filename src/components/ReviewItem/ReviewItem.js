@@ -6,7 +6,7 @@ import './ReviewItem.css'
 
 
 const ReviewItem = ({ product, handleRemoveItem }) => {
-    const { id, name, price, shipping, quantity, img } = product;
+    const { _id, name, price, shipping, quantity, img } = product;
     return (
         <div className='review-item'>
             <div>
@@ -20,7 +20,7 @@ const ReviewItem = ({ product, handleRemoveItem }) => {
                     <p><small>Quantity: {quantity}</small></p>
                 </div>
                 <div className="delete-container">
-                    <button onClick={() => handleRemoveItem(id)} className='btn-delete'>
+                    <button onClick={() => handleRemoveItem(_id)} className='btn-delete'>
                         <FontAwesomeIcon className='delete-icon' icon={faTrashAlt}></FontAwesomeIcon>
                     </button>
                 </div>
@@ -31,4 +31,4 @@ const ReviewItem = ({ product, handleRemoveItem }) => {
     );
 };
 
-export default ReviewItem;
+export default ReviewItem; 

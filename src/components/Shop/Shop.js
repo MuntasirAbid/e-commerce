@@ -16,7 +16,7 @@ const Shop = () => {
     const [size, setSize] = useState(10);
 
     useEffect(() => {
-        const url = `http://localhost:10000/products?page=${page}&size=${size}`;
+        const url = `https://e-commerce-simple-server.vercel.app/products?page=${page}&size=${size}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -39,9 +39,9 @@ const Shop = () => {
         const storedCart = getStoredCart();
         const savedCart = [];
         const ids = Object.keys(storedCart);
-        console.log(ids)
 
-        fetch('http://localhost:10000/productsByIds', {
+
+        fetch('https://e-commerce-simple-server.vercel.app/productsByIds', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -51,7 +51,7 @@ const Shop = () => {
             .then(res => res.json)
             .then(data => {
                 for (const id in storedCart) {
-                    const addedProduct = data.find(product => product._id === id);
+                    const addedProduct = data?.find(product => product._id === id);
                     if (addedProduct) {
                         const quantity = storedCart[id];
                         addedProduct.quantity = quantity;
